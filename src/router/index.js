@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
+import Login from "@/views/Login";
+import Register from "@/views/Register";
+import Profile from "@/views/Profile";
 
 Vue.use(VueRouter)
 
@@ -23,6 +26,21 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/connexion',
+    name: 'Connexion',
+    component: Login
+  },
+  {
+    path: '/inscription',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path: '/profil',
+    name: 'Profile',
+    component: Profile
   }
 ]
 

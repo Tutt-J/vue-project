@@ -8,9 +8,9 @@
 </template>
 
 <script>
-const axios = require('axios');
 import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
+import TutorialService from '../services/tutorial.service'
 export default {
   components: {Pagination, Card},
   data () {
@@ -19,9 +19,7 @@ export default {
     }
   },
   mounted () {
-    axios
-        .get('http://127.0.0.1:3000/api/tutorials')
-        .then(response => (this.info = response.data))
+    TutorialService.getPublicContent().then(response => (this.info = response.data))
   }
 }
 </script>

@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss">
 .my-sidebar.b-sidebar-outer, .my-sidebar .b-sidebar {
-  position: absolute !important;
+  position: sticky !important;
 }
 .my-sidebar{
   width:70px;

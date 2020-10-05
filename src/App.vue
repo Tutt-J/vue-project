@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <header class="mb-5">
+    <header class="fixed-top">
       <NavBar/>
     </header>
     <SideBar/>
-    <b-container >
+    <img
+        src="img/books.jpg"
+        class="lazy" alt="">
+    <b-container id="main-container" class="mb-5">
       <router-view/>
     </b-container>
-    <footer class="fluid-container">
-      <p class="text-center">Copyright &copy; 2018, ABC Marketing. All Rights Reserved.</p>
+    <footer class="fixed-bottom fluid-container py-2">
+      <p class="text-center mb-0">Copyright &copy; 2020, Digistos. Tous droits réservés.</p>
     </footer>
   </div>
 </template>
@@ -40,13 +43,28 @@ body {
     }
   }
 }
+#main-container{
+  margin-top:-100px;
+}
 footer {
   color: white;
   background-color:#72423a;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   margin-top: 50px;
+}
+
+img{
+  height:350px;
+  width:100%;
+  object-fit:cover;
+}
+
+.card{
+  background-color:transparent !important;
+}
+
+.card-img, .card-img-top{
+  border-radius:0 !important;
 }
 </style>
 <script>

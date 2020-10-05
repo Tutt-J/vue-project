@@ -1,10 +1,15 @@
 <script>
 export default {
   name: "NavBar",
+  computed: {
+    currentUser () {
+      return this.$store.state.auth.user;
+    }
+  },
 }
 </script>
 <template>
-  <b-navbar class="py-4" toggleable="lg" type="dark" variant="info">
+  <b-navbar class="py-2" toggleable="lg" type="dark" variant="info">
 
     <b-navbar-brand href="#">Comment je fais quoi ?</b-navbar-brand>
 
@@ -17,7 +22,8 @@ export default {
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#"><i class="fas fa-user mr-2"></i>Mon compte</b-nav-item>
+        <b-nav-item v-if="currentUser" href="#"><router-link to="/profil"><i class="fas fa-user mr-2"></i>Mon compte</router-link></b-nav-item>
+        <b-nav-item v-else href="#"><router-link to="/connexion"><i class="fas fa-user mr-2"></i>Connexion</router-link></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
